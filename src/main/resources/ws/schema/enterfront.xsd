@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:include schemaLocation="AppPushRequest.xsd" />
+    <xsd:include schemaLocation="AppPushResponse.xsd" />
+    <xsd:include schemaLocation="AppStatusNotifyRequest.xsd" />
+    <xsd:include schemaLocation="AppStatusNotifyResponse.xsd" />
+
+    <xsd:include schemaLocation="PublicKeyRequest.xsd" />
+    <xsd:include schemaLocation="PublicKeyResponse.xsd" />
+    <xsd:include schemaLocation="SSDInfoRequest.xsd" />
+    <xsd:include schemaLocation="SSDInfoResponse.xsd" />
+    <xsd:include schemaLocation="AppDownloadRequest.xsd" />
+    <xsd:include schemaLocation="AppDownloadResponse.xsd" />
+    
+    <xsd:include schemaLocation="AppDeleteRequest.xsd" />
+    <xsd:include schemaLocation="AppDeleteResponse.xsd" />
+    <xsd:include schemaLocation="AppDeleteResultNotifyRequest.xsd" />
+    <xsd:include schemaLocation="AppDeleteResultNotifyResponse.xsd" />
+    <xsd:include schemaLocation="AppQueryRequest.xsd" />
+    <xsd:include schemaLocation="AppQueryResponse.xsd" />
+    <xsd:include schemaLocation="AppSeCheckRequest.xsd" />
+    <xsd:include schemaLocation="AppSeCheckResponse.xsd" />
+
+    <xsd:include schemaLocation="TokenSignRequest.xsd" />
+    <xsd:include schemaLocation="TokenSignResponse.xsd" />
+    <xsd:include schemaLocation="AppDownloadResultNotifyRequest.xsd" />
+    <xsd:include schemaLocation="AppDownloadResultNotifyResponse.xsd" />
+	<xsd:include schemaLocation="AppPersonialRequest.xsd" />
+    <xsd:include schemaLocation="AppPersonialResponse.xsd" />
+    <xsd:include schemaLocation="AppActiveRequest.xsd" />
+    <xsd:include schemaLocation="AppActiveResponse.xsd" />
+    
+        
+    <xsd:include schemaLocation="CreatSSDRequest.xsd" />
+    <xsd:include schemaLocation="CreatSSDResponse.xsd" />
+    
+    <xsd:include schemaLocation="OrderSaveRequest.xsd"/>
+    <xsd:include schemaLocation="OrderSaveResponse.xsd"/>
+    
+    <xsd:element name="PublicKeyRequest" type="tsm:PublicKeyRequest"/>
+    <xsd:element name="PublicKeyResponse" type="tsm:PublicKeyResponse"/>
+    <xsd:element name="SSDInfoRequest" type="tsm:SSDInfoRequest"/>
+    <xsd:element name="SSDInfoResponse" type="tsm:SSDInfoResponse"/>
+    
+    <xsd:element name="AppPushRequest" type="tsm:AppPushRequest"/>
+    <xsd:element name="AppPushResponse" type="tsm:AppPushResponse"/>
+    <xsd:element name="AppStatusNotifyRequest" type="tsm:AppStatusNotifyRequest"/>
+    <xsd:element name="AppStatusNotifyResponse" type="tsm:AppStatusNotifyResponse"/>
+    <xsd:element name="AppDownloadRequest" type="tsm:AppDownloadRequest"/>
+    <xsd:element name="AppDownloadResponse" type="tsm:AppDownloadResponse"/>
+    <!-- 10. AppDelete start -->
+    <xsd:element name="AppDeleteRequest" type="tsm:AppDeleteRequest"/>
+    <xsd:element name="AppDeleteResponse" type="tsm:AppDeleteResponse"/>
+    <!-- 10. AppDelete end -->
+    
+    <!-- 11. AppDeleteResultNotify start -->
+    <xsd:element name="AppDeleteResultNotifyRequest" type="tsm:AppDeleteResultNotifyRequest"/>
+    <xsd:element name="AppDeleteResultNotifyResponse" type="tsm:AppDeleteResultNotifyResponse"/>
+    <!-- 11. AppDeleteResultNotify end -->
+    
+    <!-- 16. AppQuery start -->
+    <xsd:element name="AppQueryRequest" type="tsm:AppQueryRequest"/>
+    <xsd:element name="AppQueryResponse" type="tsm:AppQueryResponse"/>
+    <!-- 16. AppQuery end -->
+    
+    <!-- 17. AppSeCheck start -->
+    <xsd:element name="AppSeCheckRequest" type="tsm:AppSeCheckRequest"/>
+    <xsd:element name="AppSeCheckResponse" type="tsm:AppSeCheckResponse"/>
+    <!-- 17. AppSeCheck end -->
+    
+    <!-- 6. TokenSign start -->
+    <xsd:element name="TokenSignRequest" type="tsm:TokenSignRequest"/>
+    <xsd:element name="TokenSignResponse" type="tsm:TokenSignResponse"/>
+    <!-- 6. TokenSign end -->
+    
+    <!-- 7. AppDownloadResultNotify-->
+    <xsd:element name="AppDownloadResultNotifyRequest" type="tsm:AppDownloadResultNotifyRequest"/>
+    <xsd:element name="AppDownloadResultNotifyResponse" type="tsm:AppDownloadResultNotifyResponse"/>
+    <!-- 7. AppDownloadResultNotify end -->
+    
+    <!-- 8. AppPersonial start-->
+    <xsd:element name="AppPersonialRequest" type="tsm:AppPersonialRequest"/>
+    <xsd:element name="AppPersonialResponse" type="tsm:AppPersonialResponse"/>
+    <!-- 8. AppPersonial end -->
+    
+    <!-- 8. AppActive start-->
+    <xsd:element name="AppActiveRequest" type="tsm:AppActiveRequest"/>
+    <xsd:element name="AppActiveResponse" type="tsm:AppActiveResponse"/>
+    <!-- 8. AppActive end -->
+        
+    <!-- 12. CreatSSD start-->
+    <xsd:element name="CreatSSDRequest" type="tsm:CreatSSDRequest"/>
+    <xsd:element name="CreatSSDResponse" type="tsm:CreatSSDResponse"/>
+    <!-- 12. CreatSSD end -->
+    
+     <!-- 13. OrderSave start-->
+    <xsd:element name="OrderSaveRequest" type="tsm:OrderSaveRequest"/>
+    <xsd:element name="OrderSaveResponse" type="tsm:OrderSaveResponse"/>
+     <!-- 13. OrderSaveResponse end -->
+    
+    <!-- 消息头 -->
+    <xsd:element name="version" type="xsd:int"/>    
+    <xsd:element name="sender" type="xsd:string"/>
+    <xsd:element name="receiver" type="xsd:string"/>
+    <xsd:element name="sendTime" type="xsd:dateTime"/>
+    <xsd:element name="msgType" type="xsd:string"/>
+    <xsd:element name="tradeNO" type="xsd:int"/>
+    <xsd:element name="tradeRefNO" type="xsd:int"/>
+    <xsd:element name="sessionID" type="xsd:int"/>
+    <xsd:element name="deviceType" type="xsd:string"/>
+    
+</xsd:schema>
+

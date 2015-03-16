@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+	xmlns:tsm="http://www.tathing.com" 
+	elementFormDefault="qualified">
+	
+	<xsd:complexType name="AppPushRequest">
+	   <xsd:sequence>
+	       <xsd:element name="appAID" type="xsd:string"/>    
+	       <xsd:element name="appVersion" type="xsd:string"/>
+	       <xsd:element name="partnerOrgCode" type="xsd:string"/>
+	       <xsd:element name="appName" type="xsd:string"/>
+	       <xsd:element name="appType" type="xsd:string"/>
+	       <xsd:element name="appDesc" type="xsd:string"/>
+	       <xsd:element name="scope" type="xsd:string"/>
+	       <xsd:element name="validate" type="xsd:date"/>
+	       <xsd:element name="ramSpace" type="xsd:int"/>
+           <xsd:element name="nvmSpace" type="xsd:int"/>
+	       <xsd:element name="appPermission" type="xsd:string"/>
+	       <xsd:element name="appSecurityLevel" type="xsd:string"/>
+	       <xsd:element name="chkOrgCode" type="xsd:string"/>
+	       <xsd:element name="appRegisterTime" type="xsd:dateTime"/>
+	       <xsd:element name="icoUrl" type="xsd:string"/>
+	       <xsd:element name="iogoUrl" type="xsd:string"/>
+	       <xsd:element name="apkUrl" type="xsd:string"/>
+	   </xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

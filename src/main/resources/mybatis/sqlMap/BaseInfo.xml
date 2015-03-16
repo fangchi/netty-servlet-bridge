@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whty.dao.BaseInfoDao">
+   
+    <resultMap id="BaseResultMap" type="com.whty.entities.BaseInfo">
+        <result property="sender_name" column="sender_name"/>
+        <result property="is_enable" column="is_enable"/>
+		<result property="exprie_time" column="exprie_time"/>
+	</resultMap>
+  
+  <select id="getBaseInfos" resultMap="BaseResultMap" parameterType="com.whty.entities.Criteria" > 
+    select * from TB_FRONT_ACCESS_SENDER
+  </select>
+	
+</mapper>

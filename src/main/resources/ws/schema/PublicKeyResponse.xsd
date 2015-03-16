@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:include schemaLocation="RspnMsg.xsd" />
+    <xsd:complexType name="PublicKeyResponse">
+       
+       <xsd:sequence>
+           <xsd:element name="rspnMsg" type="tsm:RspnMsg"/> 
+           <xsd:element name="publicKey" type="xsd:string"/>
+           <xsd:element name="algorithm" type="xsd:string"/>
+       </xsd:sequence>
+       
+    </xsd:complexType>
+    
+</xsd:schema>
+

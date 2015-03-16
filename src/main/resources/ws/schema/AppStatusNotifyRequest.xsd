@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+    xmlns:tsm="http://www.tathing.com" 
+    elementFormDefault="qualified">
+    
+    <xsd:complexType name="AppStatusNotifyRequest">
+       <xsd:sequence>
+           <xsd:element name="partnerOrgCode" type="xsd:string"/>    
+           <xsd:element name="appAID" type="xsd:string"/>
+           <xsd:element name="appVersion" type="xsd:string"/>
+           <xsd:element name="appStatus" type="xsd:string"/>
+       </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

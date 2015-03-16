@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+	xmlns:tsm="http://www.tathing.com" 
+	elementFormDefault="qualified">
+	<xsd:complexType name="OrderSaveRequest">
+	   <xsd:sequence>
+	       <xsd:element name="code" type="xsd:string"/>	       
+	       <xsd:element name="seId" type="xsd:string"/>	       
+	       <xsd:element name="uid" type="xsd:string"/>	       
+	       <xsd:element name="appId" type="xsd:string"/>	       
+	       <xsd:element name="appName" type="xsd:string"/>	              
+	       <xsd:element name="cardNo" type="xsd:string"/>        
+	       <xsd:element name="ditchNo" type="xsd:string"/>	       
+	       <xsd:element name="mobileSupplier" type="xsd:string"/>	       
+	       <xsd:element name="partner" type="xsd:string"/>	       
+	       <xsd:element name="operateType" type="xsd:string"/>	       
+	       <xsd:element name="splittingCode" type="xsd:string"/>        
+	       <xsd:element name="orderAmount" type="xsd:string"/>	       
+	       <xsd:element name="tradeTime" type="xsd:string"/>	       
+	       <xsd:element name="tradeSerialNo" type="xsd:string"/>	       
+	       <xsd:element name="orderTime" type="xsd:string"/>   
+	      </xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

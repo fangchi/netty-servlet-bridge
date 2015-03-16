@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd"
+	default-lazy-init="false">
+	<description>Spring公共配置</description>
+
+	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+	<context:component-scan base-package="com.whty">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 定义aspectj -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<!-- PropertyPlaceholderConfigurer,用于spring ${placeholder}的解析 -->
+	<bean id="propertyConfigurer"
+		class="com.whty.framework.spring.SpringPropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:/config/config.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 厦门 服务启动获取tanskey -->
+	<!--
+	<bean id="cacheXmTranskey" class="com.whty.framework.common.redis.cache.CacheXmTranskey"
+		init-method="initCache"></bean>
+		-->
+
+	<!-- 洪城  服务启动获取tanskey -->
+<!-- 	 <bean id="cacheHcTranskey" class="com.whty.framework.common.redis.cache.CacheHcTranskey" -->
+<!-- 		init-method="initCache"></bean> -->
+
+	<!-- 重庆  服务启动获取tanskey
+	 <bean id="cacheCqTranskey" class="com.whty.framework.common.redis.cache.CacheCqTranskey"
+		init-method="initCache"></bean>
+
+	<bean id="httpServerPipelineFactory" class="com.whty.framework.netty.HttpServerPipelineFactory" scope="prototype">
+		<property name="httpRequestHandler" ref="httpRequestHandler" />
+	</bean>
+	<bean id="httpRequestHandler" class="com.whty.framework.netty.HttpRequestHandler" scope="prototype">
+	</bean> -->
+</beans>

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	targetNamespace="http://www.tathing.com" xmlns:tsm="http://www.tathing.com"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="EnterFrontService">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.tathing.com">
+			<xsd:include schemaLocation="schema/enterfront.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="Header">
+		<wsdl:part element="tsm:version" name="version"></wsdl:part>
+		<wsdl:part element="tsm:sender" name="sender"></wsdl:part>
+		<wsdl:part element="tsm:receiver" name="receiver"></wsdl:part>
+		<wsdl:part element="tsm:sendTime" name="sendTime"></wsdl:part>
+		<wsdl:part element="tsm:msgType" name="msgType"></wsdl:part>
+		<wsdl:part element="tsm:tradeNO" name="tradeNO"></wsdl:part>
+		<wsdl:part element="tsm:tradeRefNO" name="tradeRefNO"></wsdl:part>
+		<wsdl:part element="tsm:sessionID" name="sessionID"></wsdl:part>
+		<wsdl:part element="tsm:deviceType" name="deviceType"></wsdl:part>
+	</wsdl:message>
+
+	<!-- 1. appPush start -->
+	<wsdl:message name="AppPushRequest">
+		<wsdl:part element="tsm:AppPushRequest" name="AppPushRequest" />
+	</wsdl:message>
+	<wsdl:message name="AppPushResponse">
+		<wsdl:part element="tsm:AppPushResponse" name="AppPushResponse" />
+	</wsdl:message>
+    <!-- 1. appPush end -->
+    
+	<!-- 2. appStatusNotify start -->
+	<wsdl:message name="AppStatusNotifyRequest">
+        <wsdl:part element="tsm:AppStatusNotifyRequest" name="AppStatusNotifyRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppStatusNotifyResponse">
+        <wsdl:part element="tsm:AppStatusNotifyResponse" name="AppStatusNotifyResponse" />
+    </wsdl:message>
+    <!-- 2. appPush end -->
+    
+    <!-- 3. PublicKey start -->
+    <wsdl:message name="PublicKeyRequest">
+        <wsdl:part element="tsm:PublicKeyRequest" name="PublicKeyRequest" />
+    </wsdl:message>
+    <wsdl:message name="PublicKeyResponse">
+        <wsdl:part element="tsm:PublicKeyResponse" name="PublicKeyResponse" />
+    </wsdl:message>
+    <!-- 3. PublicKey end -->
+    
+    <!-- 4. SSDInfo start -->
+    <wsdl:message name="SSDInfoRequest">
+        <wsdl:part element="tsm:SSDInfoRequest" name="SSDInfoRequest" />
+    </wsdl:message>
+    <wsdl:message name="SSDInfoResponse">
+        <wsdl:part element="tsm:SSDInfoResponse" name="SSDInfoResponse" />
+    </wsdl:message>
+    <!-- 4. SSDInfo end -->
+    
+    <!-- 5. AppDownload start -->
+    <wsdl:message name="AppDownloadRequest">
+        <wsdl:part element="tsm:AppDownloadRequest" name="AppDownloadRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppDownloadResponse">
+        <wsdl:part element="tsm:AppDownloadResponse" name="AppDownloadResponse" />
+    </wsdl:message>
+    <!-- 5. AppDownload end -->
+    
+    <!--  appDelete -->
+	<wsdl:message name="AppDeleteRequest">
+        <wsdl:part element="tsm:AppDeleteRequest" name="AppDeleteRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppDeleteResponse">
+        <wsdl:part element="tsm:AppDeleteResponse" name="AppDeleteResponse" />
+    </wsdl:message>
+    
+    <!--  appDeleteResultNotify -->
+	<wsdl:message name="AppDeleteResultNotifyRequest">
+        <wsdl:part element="tsm:AppDeleteResultNotifyRequest" name="AppDeleteResultNotifyRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppDeleteResultNotifyResponse">
+        <wsdl:part element="tsm:AppDeleteResultNotifyResponse" name="AppDeleteResultNotifyResponse" />
+    </wsdl:message>
+    
+    <!--  appQuery -->
+<!-- 	<wsdl:message name="AppQueryRequest">
+        <wsdl:part element="tsm:AppQueryRequest" name="AppQueryRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppQueryResponse">
+        <wsdl:part element="tsm:AppQueryResponse" name="AppQueryResponse" />
+    </wsdl:message>   -->          
+    
+    <!--  appSeCheck -->
+<!-- 	<wsdl:message name="AppSeCheckRequest">
+        <wsdl:part element="tsm:AppSeCheckRequest" name="AppSeCheckRequest" />
+    </wsdl:message>
+    <wsdl:message name="AppSeCheckResponse">
+        <wsdl:part element="tsm:AppSeCheckResponse" name="AppSeCheckResponse" />
+    </wsdl:message> -->
+
+	<!-- 6. TokenSign start -->
+	<wsdl:message name="TokenSignRequest">
+		<wsdl:part element="tsm:TokenSignRequest" name="TokenSignRequest" />
+	</wsdl:message>
+	<wsdl:message name="TokenSignResponse">
+		<wsdl:part element="tsm:TokenSignResponse" name="TokenSignResponse" />
+	</wsdl:message>
+	<!-- 6. TokenSign end -->
+	
+	<!-- 7. AppDownloadResultNotify start -->
+	<wsdl:message name="AppDownloadResultNotifyRequest">
+		<wsdl:part element="tsm:AppDownloadResultNotifyRequest" name="AppDownloadResultNotifyRequest" />
+	</wsdl:message>
+	<wsdl:message name="AppDownloadResultNotifyResponse">
+		<wsdl:part element="tsm:AppDownloadResultNotifyResponse" name="AppDownloadResultNotifyResponse" />
+	</wsdl:message>
+	<!-- 7. AppDownloadResultNotify end -->
+	
+	<!-- 8. AppPersonial start -->
+	<wsdl:message name="AppPersonialRequest">
+		<wsdl:part element="tsm:AppPersonialRequest" name="AppPersonialRequest" />
+	</wsdl:message>
+	<wsdl:message name="AppPersonialResponse">
+		<wsdl:part element="tsm:AppPersonialResponse" name="AppPersonialResponse" />
+	</wsdl:message>
+	<!-- 8. AppPersonial end -->
+	
+	<!-- 9. AppActive start -->
+	<wsdl:message name="AppActiveRequest">
+		<wsdl:part element="tsm:AppActiveRequest" name="AppActiveRequest" />
+	</wsdl:message>
+	<wsdl:message name="AppActiveResponse">
+		<wsdl:part element="tsm:AppActiveResponse" name="AppActiveResponse" />
+	</wsdl:message>
+	<!-- 9. AppActive end -->
+	
+	<!-- 12. CreatSSD start -->
+	<wsdl:message name="CreatSSDRequest">
+		<wsdl:part element="tsm:CreatSSDRequest" name="CreatSSDRequest" />
+	</wsdl:message>
+	<wsdl:message name="CreatSSDResponse">
+		<wsdl:part element="tsm:CreatSSDResponse" name="CreatSSDResponse" />
+	</wsdl:message>
+	<!-- 12. CreatSSD end -->
+	
+	<wsdl:message name="OrderSaveRequest">
+		<wsdl:part element="tsm:OrderSaveRequest" name="OrderSaveRequest" />
+	</wsdl:message>
+	<wsdl:message name="OrderSaveResponse">
+		<wsdl:part element="tsm:OrderSaveResponse" name="OrderSaveResponse" />
+	</wsdl:message>
+	
+	
+	<wsdl:portType name="IEnterFrontService">
+		<!-- 1. AppPush start -->
+		<wsdl:operation name="AppPush">
+			<wsdl:input message="tsm:AppPushRequest" />
+			<wsdl:output message="tsm:AppPushResponse" />
+		</wsdl:operation>
+		<!-- 1. AppPush end -->
+		
+		<!-- 2. AppStatusNotify start -->
+		<wsdl:operation name="AppStatusNotify">
+			<wsdl:input message="tsm:AppStatusNotifyRequest" />
+			<wsdl:output message="tsm:AppStatusNotifyResponse" />
+		</wsdl:operation>
+		<!-- 2. AppStatusNotify end -->
+        
+        <!-- 3. PublicKey start -->
+        <wsdl:operation name="PublicKey">
+            <wsdl:input message="tsm:PublicKeyRequest" />
+            <wsdl:output message="tsm:PublicKeyResponse" />
+        </wsdl:operation>
+        <!-- 3. PublicKey end -->
+        
+        <!-- 4. SSDInfo start -->
+        <wsdl:operation name="SSDInfo">
+            <wsdl:input message="tsm:SSDInfoRequest" />
+            <wsdl:output message="tsm:SSDInfoResponse" />
+        </wsdl:operation>
+        <!-- 4. SSDInfo end -->
+        
+        <!-- 5. AppDownload start -->
+        <wsdl:operation name="AppDownload">
+            <wsdl:input message="tsm:AppDownloadRequest" />
+            <wsdl:output message="tsm:AppDownloadResponse" />
+        </wsdl:operation>
+        <!-- 5. AppDownload end -->
+        
+		<!-- 6. TokenSign start -->
+		<wsdl:operation name="TokenSign">
+			<wsdl:input message="tsm:TokenSignRequest" />
+			<wsdl:output message="tsm:TokenSignResponse" />
+		</wsdl:operation>
+		<!-- 6. TokenSign end -->
+		
+		<!-- 7. AppDownloadResultNotify start -->
+		<wsdl:operation name="AppDownloadResultNotify">
+			<wsdl:input message="tsm:AppDownloadResultNotifyRequest" />
+			<wsdl:output message="tsm:AppDownloadResultNotifyResponse" />
+		</wsdl:operation>
+		<!-- 7. AppDownloadResultNotify end -->
+		<!-- 8. AppPersonial start -->
+		<wsdl:operation name="AppPersonial">
+			<wsdl:input message="tsm:AppPersonialRequest" />
+			<wsdl:output message="tsm:AppPersonialResponse" />
+		</wsdl:operation>
+		<!-- 8. AppPersonial end -->
+		<!-- 9. AppActive start -->
+		<wsdl:operation name="AppActive">
+			<wsdl:input message="tsm:AppActiveRequest" />
+			<wsdl:output message="tsm:AppActiveResponse" />
+		</wsdl:operation>
+		<!-- 9. AppActive end -->
+		
+        <!-- 10. AppDelete start -->
+        <wsdl:operation name="AppDelete">
+			<wsdl:input message="tsm:AppDeleteRequest" />
+			<wsdl:output message="tsm:AppDeleteResponse" />
+		</wsdl:operation>
+		<!-- 10. AppDelete end -->
+		
+		<!-- 11. AppDeleteResultNotify start -->
+		<wsdl:operation name="AppDeleteResultNotify">
+            <wsdl:input message="tsm:AppDeleteResultNotifyRequest" />
+            <wsdl:output message="tsm:AppDeleteResultNotifyResponse" />
+        </wsdl:operation>
+        <!-- 11. AppDeleteResultNotify end -->
+        
+        <!-- 16. AppQuery start -->
+<!--         <wsdl:operation name="AppQuery">
+            <wsdl:input message="tsm:AppQueryRequest" />
+            <wsdl:output message="tsm:AppQueryResponse" />
+        </wsdl:operation> -->
+        <!-- 16. AppQuery end -->
+        
+        <!-- 17. AppSeCheck start -->
+<!--         <wsdl:operation name="AppSeCheck">
+            <wsdl:input message="tsm:AppSeCheckRequest" />
+            <wsdl:output message="tsm:AppSeCheckResponse" />
+        </wsdl:operation> -->
+        <!-- 17. AppSeCheck end -->
+        
+        <!-- 12. CreatSSD start -->
+        <wsdl:operation name="CreatSSD">
+            <wsdl:input message="tsm:CreatSSDRequest" />
+            <wsdl:output message="tsm:CreatSSDResponse" />
+        </wsdl:operation>
+        <!-- 12. CreatSSD end -->
+                
+        <wsdl:operation name="OrderSave">
+            <wsdl:input message="tsm:OrderSaveRequest" />
+            <wsdl:output message="tsm:OrderSaveResponse" />
+        </wsdl:operation>
+        
+	</wsdl:portType>
+
+	<wsdl:binding name="EnterFrontServiceSOAP" type="tsm:IEnterFrontService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<!-- 1. AppPush start -->
+		<wsdl:operation name="AppPush">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+        <!-- 1. AppPush end -->
+        
+        <!-- 2. AppStatusNotify start -->
+		<wsdl:operation name="AppStatusNotify">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+        <!-- 2. AppStatusNotify start -->
+        
+        <!-- 3. PublicKey start -->
+        <wsdl:operation name="PublicKey">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <!-- 3. PublicKey end -->
+        
+        <!-- 4. SSDInfo start -->
+        <wsdl:operation name="SSDInfo">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <!-- 4. SSDInfo end -->
+        
+        <!-- 5. AppDownload start -->
+        <wsdl:operation name="AppDownload">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <!-- 5. AppDownload end -->
+        
+		<!-- 6. TokenSign start -->
+		<wsdl:operation name="TokenSign">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<!-- 6. TokenSign end -->
+		
+		<!-- 7. AppDownloadResultNotify start -->
+		<wsdl:operation name="AppDownloadResultNotify">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<!-- 7. AppDownloadResultNotify end -->
+		
+		<!-- 8. AppPersonial start -->
+		<wsdl:operation name="AppPersonial">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<!-- 8. AppPersonial end -->
+        <!-- 9. AppActive start -->
+		<wsdl:operation name="AppActive">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<!-- 9. AppActive end -->
+        <!-- 10. AppDelete start -->
+        <wsdl:operation name="AppDelete">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <!-- 10. AppDelete end -->
+        <!-- 11. AppDeleteResultNotify start -->
+        <wsdl:operation name="AppDeleteResultNotify">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+         <!-- 11. AppDeleteResultNotify end -->
+        <!-- 16. AppQuery start -->
+<!--         <wsdl:operation name="AppQuery">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation> -->
+        <!-- 16. AppQuery end -->
+        <!-- 17. AppSeCheck start -->
+<!--         <wsdl:operation name="AppSeCheck">
+            <wsdl:input>
+                <soap:body use="literal" />
+                <soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+                <soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation> -->
+        <!-- 17. AppSeCheck end -->
+                
+        <!-- 12. CreatSSD start -->
+		<wsdl:operation name="CreatSSD">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+        <!-- 12. CreatSSD end -->
+        
+       	<wsdl:operation name="OrderSave">
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="version" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sender" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="receiver" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sendTime" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="msgType" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="tradeRefNO" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="sessionID" message="tsm:Header"></soap:header>
+				<soap:header use="literal" part="deviceType" message="tsm:Header"></soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+
+	
+	<wsdl:service name="EnterFrontService">
+		<wsdl:port binding="tsm:EnterFrontServiceSOAP" name="EnterFrontServicePort">
+			<soap:address
+				location="http://localhost:8070/services/EnterFrontService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

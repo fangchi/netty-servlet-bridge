@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.tathing.com"
+	xmlns:tsm="http://www.tathing.com" 
+	elementFormDefault="qualified">
+	
+	<xsd:complexType name="SSDInfoRequest">
+	   <xsd:sequence>
+	       <xsd:element name="partnerOrgCode" type="xsd:string"/>
+	       <xsd:element name="appAID" type="xsd:string"/>
+	       <xsd:element name="cardNO" type="xsd:string"/>
+	       <xsd:element name="ats" type="xsd:string"/> 
+	   </xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
